@@ -1,7 +1,8 @@
 const Event = ({disPatch, event}) => {
   const id = event.id
   const handleClickDelete = () => {
-    disPatch({type: 'DELETE_EVENT', id})
+    const result = window.confirm(`id${event.id}のイベントを本当に削除しても良いですか？`)
+    result && disPatch({type: 'DELETE_EVENT', id})
   }
   return (
     <tr>
